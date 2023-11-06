@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Product from "./pages/Product";
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
+import Login from "./pages/Login";
 import AppLayout from "./pages/AppLayout";
 import NotFound from "./pages/NotFound";
 
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Homepage />}></Route>
         <Route path="product" element={<Product />}></Route>
         <Route path="pricing" element={<Pricing />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="app" element={<AppLayout />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
