@@ -29,6 +29,8 @@
   font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 3rem;
+  color: var(--color-light--2);
+  text-align: start;
 }
 
 .product p {
@@ -43,4 +45,12 @@
 .list {
   list-style: none;
   font-size: 20px;
+}
+
+li {
+  color: var(--color-light--2);
+}
+
+p {
+  color: var(--color-light--2);
 }

@@ -1,0 +1,80 @@
+/* ContactForm.module.css */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 150px;
+  background-image: linear-gradient(
+      rgba(36, 42, 46, 0.75),
+      rgba(36, 42, 46, 0.75)
+    ),
+    url("homepage.webp");
+  background-size: cover;
+  background-position: center;
+}
+.app {
+  padding: 0px;
+  margin: 0px;
+}
+
+.pageForm {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the "Submit" button */
+button[type="submit"] {
+  flex: 1; /* Use flex property to make both buttons share available space */
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button[type="submit"]:hover {
+  background-color: darkgreen;
+}
+
+/* Style the "Reset" button */
+button[type="button"] {
+  flex: 1; /* Use flex property to make both buttons share available space */
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}

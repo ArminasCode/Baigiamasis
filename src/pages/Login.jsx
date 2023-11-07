@@ -6,6 +6,15 @@ import { useState } from "react";
 export default function Login() {
   const [email, setEmail] = useState("vardenis@gmail.com");
   const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const handleLogin = () => {
+    if (password.length >= 7) {
+      // Redirect to the selected page
+    } else {
+      setPasswordError("Password must be at least 7 characters long");
+    }
+  };
 
   return (
     <main className={styles.login}>
@@ -26,9 +35,13 @@ export default function Login() {
           <input
             type="password"
             id="password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setPasswordError("");
+            }}
             value={password}
           />
+          {passwordError && <div className={styles.error}>{passwordError}</div>}
         </div>
 
         <div>
@@ -36,7 +49,11 @@ export default function Login() {
             to={password.length >= 7 ? "/" : "#"}
             className={styles.loginBtn}
           >
-            <button className={styles.loginBtn} disabled={password.length < 7}>
+            <button
+              className={styles.loginBtn}
+              disabled={password.length < 7}
+              onClick={handleLogin}
+            >
               Prisijungti
             </button>
           </Link>

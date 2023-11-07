@@ -19,7 +19,7 @@ export default function Homepage() {
           cumque officia nemo dolores.
         </h2>
         <Link to="/app" className="cta">
-          Registruotis specialisto apziurai
+          Registruotis specialisto apziūrai
         </Link>
       </section>
     </main>
