@@ -9,17 +9,17 @@ function PageNav() {
 
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Namų puslapis</NavLink>
         </li>
         <li>
-          <NavLink to="/pricing">Pricing</NavLink>
+          <NavLink to="/pricing">Kontaktai</NavLink>
         </li>
         <li>
-          <NavLink to="/product">Product</NavLink>
+          <NavLink to="/product">Apie mus</NavLink>
         </li>
         <li>
           <NavLink to="/login" className={styles.ctaLink}>
-            Log in
+            Prisijungti
           </NavLink>
         </li>
       </ul>

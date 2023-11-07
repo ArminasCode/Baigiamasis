@@ -18,7 +18,7 @@ export default function Homepage() {
           you have wandered the world.
         </h2>
         <Link to="/app" className="cta">
-          Registruotis specialisto apziurai dabar
+          Registruotis specialisto apziurai
         </Link>
       </section>
     </main>

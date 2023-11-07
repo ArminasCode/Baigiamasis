@@ -3,11 +3,18 @@
   padding: 2.5rem 5rem;
   background-color: var(--color-dark--1);
   min-height: calc(100vh - 5rem);
+  background-image: linear-gradient(
+      rgba(36, 42, 46, 0.75),
+      rgba(36, 42, 46, 0.75)
+    ),
+    url("homepage.webp");
+  background-size: cover;
+  background-position: center;
 }
 
 .product section {
   width: clamp(80rem, 80%, 90rem);
-  margin: 6rem auto;
+  margin: 20rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 7rem;
@@ -31,4 +38,9 @@
 
 .product section a {
   margin-top: 2rem;
+}
+
+.list {
+  list-style: none;
+  font-size: 20px;
 }

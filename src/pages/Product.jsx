@@ -6,9 +6,9 @@ export default function Product() {
     <main className={styles.product}>
       <PageNav />
       <section>
-        <img src="product.jpg" alt="" />
+        <img src="veteraClinic.webp" alt="" />
         <div>
-          <h2>About WorldWide.</h2>
+          <h2>Apie Vetera.</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est
             dicta illum vero culpa cum quaerat architecto sapiente eius non

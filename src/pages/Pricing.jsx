@@ -8,18 +8,15 @@ export default function Product() {
       <PageNav />
       <section>
         <div>
-          <h2>
-            Simple pricing.
-            <br />
-            Just $9/month.
-          </h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel
-            labore mollitia iusto. Recusandae quos provident, laboriosam fugit
-            voluptatem iste.
-          </p>
+          <h2>Klinikos padalinių kontaktai ir darbo laikai.</h2>
+          <ul className={styles.list}>
+            <li>Darbo laikas:</li>
+            <li>I-VII 8-23h.</li>
+            <li>Adresas: Pavilionių g.35-41, LT-12137 Vilnius, Lietuva </li>
+            <li>El.paštas: Vetera@gmail.com</li>
+          </ul>
         </div>
-        <img src="pricing.png" alt="" />
+        <img src="map.png" alt="" />
       </section>
     </main>
   );

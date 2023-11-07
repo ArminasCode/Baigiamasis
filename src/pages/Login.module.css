@@ -28,6 +28,7 @@
   width: 100px;
   height: 30px;
   border-radius: 7px;
-  background-color: var(--color-brand--2);
+  background-color: var(--color-blue--1);
   border-style: none;
+  cursor: pointer;
 }
