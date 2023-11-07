@@ -1,3 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .logo {
-  height: 70px;
+  height: 100px;
+}
+
+.name {
+  color: black;
+  font-size: 50px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }

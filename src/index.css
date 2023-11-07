@@ -8,6 +8,8 @@
   --color-light--1: #aaa;
   --color-light--2: #ececec;
   --color-light--3: #d6dee0;
+
+  --color-blue--1: #24a0ed;
 }
 
 * {
@@ -53,7 +55,7 @@ input:focus {
 .cta:link,
 .cta:visited {
   display: inline-block;
-  background-color: var(--color-brand--2);
+  background-color: var(--color-blue--1);
   color: var(--color-dark--1);
   text-transform: uppercase;
   text-decoration: none;

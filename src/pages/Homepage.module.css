@@ -5,7 +5,7 @@
       rgba(36, 42, 46, 0.75),
       rgba(36, 42, 46, 0.75)
     ),
-    url("homepage-bg.jpg");
+    url("homepage.webp");
   background-size: cover;
   background-position: center;
   padding: 2.5rem 5rem;
@@ -30,6 +30,6 @@
 .homepage h2 {
   width: 90%;
   font-size: 1.9rem;
-  color: var(--color-light--1);
+  color: var(--color-light--2);
   margin-bottom: 2.5rem;
 }

@@ -8,7 +8,8 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 5rem;
+  padding-right: 40px;
 }
 
 .nav a:link,
@@ -20,14 +21,13 @@
   font-weight: 600;
 }
 
-/* CSS Modules feature */
 .nav a:global(.active) {
-  color: var(--color-brand--2);
+  color: var(--color-blue--1);
 }
 
 a.ctaLink:link,
 a.ctaLink:visited {
-  background-color: var(--color-brand--2);
+  background-color: var(--color-blue--1);
   color: var(--color-dark--0);
   padding: 0.8rem 2rem;
   border-radius: 7px;
