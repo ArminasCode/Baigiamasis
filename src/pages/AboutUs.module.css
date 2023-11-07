@@ -1,4 +1,4 @@
-.product {
+.content {
   margin: 2.5rem;
   padding: 2.5rem 5rem;
   background-color: var(--color-dark--1);
@@ -12,7 +12,7 @@
   background-position: center;
 }
 
-.product section {
+.content section {
   width: clamp(80rem, 80%, 90rem);
   margin: 20rem auto;
   display: grid;
@@ -21,11 +21,11 @@
   align-items: center;
 }
 
-.product img {
+.content img {
   width: 100%;
 }
 
-.product h2 {
+.content h2 {
   font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 3rem;
@@ -33,12 +33,12 @@
   text-align: start;
 }
 
-.product p {
+.content p {
   font-size: 1.6rem;
   margin-bottom: 2rem;
 }
 
-.product section a {
+.content section a {
   margin-top: 2rem;
 }
 

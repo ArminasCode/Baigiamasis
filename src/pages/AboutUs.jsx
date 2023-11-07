@@ -1,9 +1,9 @@
 import PageNav from "../components/PageNav";
-import styles from "./Product.module.css";
+import styles from "./AboutUs.module.css";
 
-export default function Product() {
+export default function AboutUs() {
   return (
-    <main className={styles.product}>
+    <main className={styles.content}>
       <PageNav />
       <section>
         <img src="veteraClinic.webp" alt="" />

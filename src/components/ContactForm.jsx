@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import styles from "./ContactForm.module.css";
 import PageNav from "../components/PageNav";
 import Datetime from "react-datetime";
-
 import "react-datetime/css/react-datetime.css";
 
 function ContactForm() {
@@ -14,21 +13,15 @@ function ContactForm() {
     appointmentTime: null,
   };
 
-  const [formData, setFormData] = useState(initialFormData);
+  const [formData, setFormData] = useState({ ...initialFormData });
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     fetch("/db.json")
       .then((response) => response.json())
       .then((data) => {
-        if (data && data.length > 0) {
-          const firstItem = data[0];
-          setFormData({
-            firstName: firstItem.firstName,
-            lastName: firstItem.lastName,
-            email: firstItem.email,
-            phoneNumber: firstItem.phoneNumber,
-            appointmentTime: null,
-          });
+        if (data && data.contacts) {
+          setFormData(data.contacts[0]);
         }
       })
       .catch((error) => {
@@ -38,21 +31,36 @@ function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleDateChange = (moment) => {
-    setFormData({ ...formData, appointmentTime: moment });
-  };
-
-  const handleReset = () => {
-    setFormData(initialFormData);
+    setFormData({
+      ...formData,
+      appointmentTime: moment,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormSubmitted(true);
     console.log(formData);
+    // You can send the data to the server here if needed.
   };
+
+  const handleReset = () => {
+    setFormData({ ...initialFormData });
+    setFormSubmitted(false);
+  };
+
+  if (formData.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  const contact = formData;
 
   return (
     <div className={styles.form}>
@@ -66,7 +74,7 @@ function ContactForm() {
               type="text"
               id="firstName"
               name="firstName"
-              value={formData.firstName}
+              value={contact.firstName}
               onChange={handleChange}
             />
           </div>
@@ -76,7 +84,7 @@ function ContactForm() {
               type="text"
               id="lastName"
               name="lastName"
-              value={formData.lastName}
+              value={contact.lastName}
               onChange={handleChange}
             />
           </div>
@@ -86,7 +94,7 @@ function ContactForm() {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
+              value={contact.email}
               onChange={handleChange}
             />
           </div>
@@ -96,7 +104,7 @@ function ContactForm() {
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
-              value={formData.phoneNumber}
+              value={contact.phoneNumber}
               onChange={handleChange}
             />
           </div>
@@ -106,7 +114,7 @@ function ContactForm() {
             </label>
             <Datetime
               inputProps={{ name: "appointmentTime" }}
-              value={formData.appointmentTime}
+              value={contact.appointmentTime}
               onChange={handleDateChange}
             />
           </div>
@@ -115,6 +123,7 @@ function ContactForm() {
             Reset
           </button>
         </form>
+        {formSubmitted && <div>Registracija sekminga!</div>}
       </div>
     </div>
   );
