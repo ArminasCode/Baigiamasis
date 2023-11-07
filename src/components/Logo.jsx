@@ -6,8 +6,8 @@ function Logo() {
     <div className={styles.container}>
       <Link to="/">
         <img src="/logo4.jpg" alt="logo" className={styles.logo} />
+        <h3 className={styles.name}>Vetera</h3>
       </Link>
-      <h3 className={styles.name}>Vetera</h3>
     </div>
   );
 }

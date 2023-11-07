@@ -8,14 +8,15 @@ export default function Homepage() {
       <PageNav />
       <section>
         <h1>
-          You travel the world.
+          Klinika-Vetera
           <br />
-          WorldWise keeps track of your adventures.
+          Veterai rūpi Jūsų augintinių sveikata!
         </h1>
         <h2>
-          A world map that tracks your footsteps into every city you can think
-          of. Never forget your wonderful experiences, and show your friends how
-          you have wandered the world.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          veritatis illum ipsam aliquid laboriosam ipsum voluptatibus dicta
+          accusantium enim, sed facilis reprehenderit suscipit a dolor. In
+          cumque officia nemo dolores.
         </h2>
         <Link to="/app" className="cta">
           Registruotis specialisto apziurai

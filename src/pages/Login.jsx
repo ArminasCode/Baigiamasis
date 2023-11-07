@@ -32,8 +32,13 @@ export default function Login() {
         </div>
 
         <div>
-          <Link to={"/"} className={styles.loginBtn}>
-            <button className={styles.loginBtn}>Prisijungti</button>
+          <Link
+            to={password.length >= 7 ? "/" : "#"}
+            className={styles.loginBtn}
+          >
+            <button className={styles.loginBtn} disabled={password.length < 7}>
+              Prisijungti
+            </button>
           </Link>
         </div>
       </form>
