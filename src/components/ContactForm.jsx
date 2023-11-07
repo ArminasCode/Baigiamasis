@@ -17,11 +17,9 @@ function ContactForm() {
   const [formData, setFormData] = useState(initialFormData);
 
   useEffect(() => {
-    // Fetch data from your JSON file (db.json)
     fetch("/db.json")
       .then((response) => response.json())
       .then((data) => {
-        // Assuming you want to use the first item from the JSON file
         if (data && data.length > 0) {
           const firstItem = data[0];
           setFormData({
@@ -29,14 +27,14 @@ function ContactForm() {
             lastName: firstItem.lastName,
             email: firstItem.email,
             phoneNumber: firstItem.phoneNumber,
-            appointmentTime: null, // Set the appointmentTime as needed
+            appointmentTime: null,
           });
         }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []); // The empty dependency array ensures that the effect runs once
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
