@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 150px;
   background-image: linear-gradient(
       rgba(36, 42, 46, 0.75),
       rgba(36, 42, 46, 0.75)
@@ -12,10 +11,7 @@
     url("homepage.webp");
   background-size: cover;
   background-position: center;
-}
-.app {
-  padding: 0px;
-  margin: 0px;
+  padding: 2.5rem 5rem;
 }
 
 .pageForm {

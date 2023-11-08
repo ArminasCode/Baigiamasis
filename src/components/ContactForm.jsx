@@ -13,15 +13,22 @@ function ContactForm() {
     appointmentTime: null,
   };
 
-  const [formData, setFormData] = useState({ ...initialFormData });
+  const [formData, setFormData] = useState(initialFormData);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     fetch("/db.json")
       .then((response) => response.json())
       .then((data) => {
-        if (data && data.contacts) {
-          setFormData(data.contacts[0]);
+        if (data && data.length > 0) {
+          const firstItem = data[0];
+          setFormData({
+            firstName: firstItem.firstName,
+            lastName: firstItem.lastName,
+            email: firstItem.email,
+            phoneNumber: firstItem.phoneNumber,
+            appointmentTime: null,
+          });
         }
       })
       .catch((error) => {
@@ -31,36 +38,45 @@ function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleDateChange = (moment) => {
-    setFormData({
-      ...formData,
-      appointmentTime: moment,
-    });
+    setFormData({ ...formData, appointmentTime: moment });
+  };
+
+  const handleReset = () => {
+    setFormData(initialFormData);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+
+    // Validate the form
+    if (
+      formData.firstName === "" ||
+      formData.lastName === "" ||
+      formData.email === ""
+    ) {
+      alert(
+        "Please fill out the required fields (First Name, Last Name, and Email)."
+      );
+      return;
+    }
+
     console.log(formData);
-    // You can send the data to the server here if needed.
+
+    // Clear the form data by setting it back to its initial state
+    setFormData(initialFormData);
+
+    // Display the success message
+    setFormSubmitted(true);
+
+    // Reset the success message after a delay (e.g., 5 seconds)
+    setTimeout(() => {
+      setFormSubmitted(false);
+    }, 5000);
   };
-
-  const handleReset = () => {
-    setFormData({ ...initialFormData });
-    setFormSubmitted(false);
-  };
-
-  if (formData.length === 0) {
-    return <div>Loading...</div>;
-  }
-
-  const contact = formData;
 
   return (
     <div className={styles.form}>
@@ -74,8 +90,9 @@ function ContactForm() {
               type="text"
               id="firstName"
               name="firstName"
-              value={contact.firstName}
+              value={formData.firstName}
               onChange={handleChange}
+              required
             />
           </div>
           <div>
@@ -84,8 +101,9 @@ function ContactForm() {
               type="text"
               id="lastName"
               name="lastName"
-              value={contact.lastName}
+              value={formData.lastName}
               onChange={handleChange}
+              required
             />
           </div>
           <div>
@@ -94,8 +112,9 @@ function ContactForm() {
               type="email"
               id="email"
               name="email"
-              value={contact.email}
+              value={formData.email}
               onChange={handleChange}
+              required
             />
           </div>
           <div>
@@ -104,7 +123,7 @@ function ContactForm() {
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
-              value={contact.phoneNumber}
+              value={formData.phoneNumber}
               onChange={handleChange}
             />
           </div>
@@ -114,16 +133,18 @@ function ContactForm() {
             </label>
             <Datetime
               inputProps={{ name: "appointmentTime" }}
-              value={contact.appointmentTime}
+              value={formData.appointmentTime}
               onChange={handleDateChange}
             />
           </div>
-          <button type="submit">Register</button>
+          <button type="submit">Pateikti</button>
           <button type="button" onClick={handleReset}>
-            Reset
+            Panaikinti
           </button>
+          {formSubmitted && (
+            <div className={styles.successMessage}>Registracija sėkminga!</div>
+          )}
         </form>
-        {formSubmitted && <div>Registracija sekminga!</div>}
       </div>
     </div>
   );

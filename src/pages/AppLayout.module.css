@@ -4,7 +4,5 @@
   overscroll-behavior-y: none;
   display: flex;
   position: relative;
-  background-color: var(--color-dark--2);
-  margin: 2.5rem;
   padding: 2.5rem;
 }

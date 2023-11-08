@@ -1,10 +1,10 @@
 // Uses the same styles as Product
 import PageNav from "../components/PageNav";
-import styles from "./AboutUs.module.css";
+import styles from "./Contacts.module.css";
 
 export default function Product() {
   return (
-    <main className={styles.content}>
+    <main className={styles.product}>
       <PageNav />
       <section>
         <div>
